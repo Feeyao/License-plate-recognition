@@ -31,4 +31,12 @@
 5. 执行 
 
     darknet.exe detector train data/voc.data cfg/yolov3-tiny.cfg
+   
+6. 通过Test测试集的识别率约64%.
     
+[总结]
+1. 在输入图片车牌区域较小时, 字符可能检测不出或漏检. 提升方法是将车牌区域检测和字符检测分开两个模型.
+
+2. 定位也不是很准确, 这个可能与anchors和ignore_thresh, 还有标注的box有关.
+
+3. 
