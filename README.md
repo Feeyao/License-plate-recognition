@@ -18,7 +18,7 @@
     
     [yolo]            //两个[yolo]下修改
     
-    anchors = 2,4,  10,14,  23,27,  37,58,  81,82,  135,169     //取消最大的预选框,添加一个小的预选框
+    anchors = 12,27, 15,34, 17,45, 23,61, 30,84, 198,140     //使用[kmeans-anchor-boxes](https://github.com/lars76/kmeans-anchor-boxes)计算多组预选框, 选择与其他几组偏差小的一组
     
     classes=70              // 70个类别
     
