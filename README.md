@@ -8,7 +8,7 @@
 
     batch=64
     
-    subdivisions=4    //这里根据自己内存大小修改(我11G显存设置2时,中途会out of memory. 所以设置4)
+    subdivisions=4    //这里根据自己内存大小修改(我11G显存设置2时,中途会out of memory. 所以设置4, 训练时显存占用约6G)
     
     ...
     
