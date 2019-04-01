@@ -22,7 +22,7 @@
     
     classes=70              // 70个类别
     
-    ignore_thresh = .007    //增加参与loss运算的规模(当预测的检测框与ground true的IOU大于ignore_thresh的时候，参与loss的计算)
+    ignore_thresh = .1      //增加参与loss运算的规模(当预测的检测框与ground true的IOU大于ignore_thresh的时候，参与loss的计算)
     
     ...
     
