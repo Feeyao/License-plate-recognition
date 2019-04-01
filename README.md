@@ -16,9 +16,15 @@
     
     [yolo]    //两个地方修改
     
+    anchors = 2,4, 10,14, 23,27, 37,58, 81,82, 135,169
+    
     classes=70
     
+    ignore_thresh = .007
+    
     ...
+    
+    其他参数说明可参考: https://blog.csdn.net/weixin_42731241/article/details/81474920
     
 5. 执行 
 
