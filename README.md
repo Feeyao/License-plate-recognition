@@ -8,19 +8,21 @@
 
     batch=64
     
-    subdivisions=4    //这里根据自己内存大小修改(我11G显存设置2时,中途会out of memory. 所以设置4, 训练时显存占用约6G)
+    subdivisions=4    // 这里根据自己内存大小修改(我11G显存设置2时,中途会out of memory. 所以设置4, 训练时显存占用约6G)
+    
+    angle=10          // 增加旋转角度产生样本
     
     ...
     
-    filters=225
+    filters=225       // (classes + coords + 1) * mask
     
-    [yolo]    //两个地方修改
+    [yolo]            //两个[yolo]下修改
     
-    anchors = 2,4,  10,14,  23,27,  37,58,  81,82,  135,169
+    anchors = 2,4,  10,14,  23,27,  37,58,  81,82,  135,169     //取消最大的预选框,添加一个小的预选框
     
-    classes=70
+    classes=70              // 70个类别
     
-    ignore_thresh = .007
+    ignore_thresh = .007    //增加参与loss运算的规模(当预测的检测框与ground true的IOU大于ignore_thresh的时候，参与loss的计算)
     
     ...
     
