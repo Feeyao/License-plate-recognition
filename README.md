@@ -15,4 +15,3 @@
 5. 执行 
     darknet.exe detector train data/voc.data cfg/yolov3-tiny.cfg
     
-    
