@@ -1,5 +1,5 @@
 # License-plate-recognition
-使用 "Darknet yolov3-tiny" 识别车牌
+使用 "Darknet yolov3-tiny" 训练检测模型
 
 1. 下载[data.zip](https://pan.baidu.com/s/1_Wgy_3mBgNREXXn7HRfAHw),提取码: j7c2.
 2. 将data.zip解压到darknet.exe所在目录下.
