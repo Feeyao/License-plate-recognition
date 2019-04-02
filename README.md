@@ -32,7 +32,9 @@
 
     darknet.exe detector train data/voc.data cfg/yolov3-tiny.cfg
    
-6. 通过Test测试集的识别率约64%.
+6. 训练过程(以其中一次过程为例)
+    
+   
     
 **[总结]**
 1. 在输入图片车牌区域较小时, 字符可能检测不出或漏检. 提升方法是将车牌区域检测和字符检测分开两个模型.
