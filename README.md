@@ -12,18 +12,10 @@
     
     angle=10          // 增加旋转角度产生样本
     
-    ...
+    max_batches = 220000        //最大迭代次数
     
-    filters=225       // (classes + coords + 1) * mask
-    
-    [yolo]            //两个[yolo]下修改
-    
-    ~~anchors = 12,27, 15,34, 17,45, 23,61, 30,84, 198,140     //使用[kmeans-anchor-boxes](https://github.com/lars76/kmeans-anchor-boxes)计算多组预选框, 选择与其他几组偏差小的一组~~
-    
-    classes=70              // 70个类别
-    
-    ignore_thresh = .8      //
-    
+    steps=120000,200000         //调整学习率
+  
     ...
     
     其他参数说明可参考: https://blog.csdn.net/weixin_42731241/article/details/81474920
@@ -38,14 +30,14 @@
     
     ![yolov3-tiny.cfg](https://github.com/Feeyao/License-plate-recognition/blob/master/image/20190402165417.jpg)
    
-    因为忘了改ignore_thresh,中断了两次.
-    
+    因为忘了改ignore_thresh,中断了两次. 在iter-34900调整anchors回默认值, 在42700调整ignore_thresh=.6
+  
     ![iter_34900](https://github.com/Feeyao/License-plate-recognition/blob/master/image/chart-iter_34900.png)
     ![iter_42700](https://github.com/Feeyao/License-plate-recognition/blob/master/image/chart-iter_42700.png)
     
 **[总结]**
-1. 在输入图片车牌区域较小时, 字符可能检测不出或漏检. 提升方法是将车牌区域检测和字符检测分开两个模型.
+1. 此方法对输入图片存在一定要求, 车牌区域在图片上较小时, 字符可能检测不出或漏检. 提升方法是将车牌区域检测和字符检测分开两个模型.
 
-2. 定位也不是很准确, 这个可能与anchors和ignore_thresh, 还有标注的box有关.
+2. 
 
 3. 想起来再写.
