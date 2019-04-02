@@ -18,7 +18,7 @@
     
     [yolo]            //两个[yolo]下修改
     
-    anchors = 12,27, 15,34, 17,45, 23,61, 30,84, 198,140     //使用[kmeans-anchor-boxes](https://github.com/lars76/kmeans-anchor-boxes)计算多组预选框, 选择与其他几组偏差小的一组
+    ~~anchors = 12,27, 15,34, 17,45, 23,61, 30,84, 198,140     //使用[kmeans-anchor-boxes](https://github.com/lars76/kmeans-anchor-boxes)计算多组预选框, 选择与其他几组偏差小的一组~~
     
     classes=70              // 70个类别
     
