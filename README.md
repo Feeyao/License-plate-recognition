@@ -33,7 +33,7 @@
     darknet.exe detector train data/voc.data cfg/yolov3-tiny.cfg
    
 6. 训练过程(以其中一次过程为例)
-    ![yolov3-tiny.cfg][image/20190402165417.jpg]
+    ![yolov3-tiny.cfg](https://github.com/Feeyao/License-plate-recognition/blob/master/image/20190402165417.jpg)
    
     
 **[总结]**
