@@ -41,7 +41,8 @@ int main(int argc, char* argv[])
 	}
 
 	cv::Mat image = cv::imread(argv[4]);
-
+	
+	std::chrono::duration<double> spenttime;
 	//计时
 	auto start = std::chrono::steady_clock::now();
 
@@ -86,9 +87,9 @@ int main(int argc, char* argv[])
 	}
 
 	auto end = std::chrono::steady_clock::now();
-
+	spenttime = end - start;
 	std::cout << "license plate: " << plate << std::endl;
-	std::cout << "detect time: " << (end - start).count() * 1000 << " ms" << std::endl;
+	std::cout << "detect time: " << spenttime.count() * 1000 << " ms" << std::endl;
 
 	cv::imshow("show", image);
 	cv::waitKey();
