@@ -19,9 +19,9 @@ struct greation
 
 int main(int argc, char* argv[])
 {
-if (argc < 5) {
+	if (argc < 5) {
 		std::cout << "Usage: " << argv[0] << 
-      " path/to/yolov3-tiny.cfg path/to/yolov3-tiny_****.weights path/to/voc.names path/to/image.jpg" << std::endl;
+      			" path/to/yolov3-tiny.cfg path/to/yolov3-tiny_****.weights path/to/voc.names path/to/image.jpg" << std::endl;
 		return 0;
 	}
 	
