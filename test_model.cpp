@@ -93,5 +93,6 @@ int main(int argc, char* argv[])
 	cv::imshow("show", image);
 	cv::waitKey();
 
-  return 0;
+	delete detect;
+  	return 0;
 }
