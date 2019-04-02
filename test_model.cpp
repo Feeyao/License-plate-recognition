@@ -1,3 +1,6 @@
+//这里使用 windows版Darknet[https://github.com/AlexeyAB/darknet]编译的GPU版动态库yolo_cpp_dll测试
+
+
 #include <iostream>
 #include <fstream>
 #include <queue>
