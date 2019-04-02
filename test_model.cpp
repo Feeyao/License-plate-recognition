@@ -10,7 +10,7 @@
 #include <thread>
 
 #include "yolo_v2_class.hpp"
-#pragma comment(lib, "yolo_v2_class.lib")
+#pragma comment(lib, "yolo_cpp_dll.lib")
 
 struct greation
 {
