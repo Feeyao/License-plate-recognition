@@ -6,6 +6,8 @@
 3. 进入data/voc目录下运行voc_label.bat重新生成2019_train.txt, 2019_val.txt.
 4. 修改cfg/yolov3-tiny.cfg
 
+    [net]
+    
     batch=64
     
     subdivisions=4    // 这里根据自己内存大小修改(我11G显存设置2时,中途会out of memory. 所以设置4, 训练时显存占用约6G)
@@ -16,6 +18,18 @@
     
     steps=120000,200000         //调整学习率
   
+    ...
+    
+    filters=225                 //[yolo]前一个filters=(classes类别数+ coords坐标数 +1) * mask个数
+    
+    [yolo]
+    
+    anchors = 12,27,  15,34,  17,45,  23,61,  37,58,  81,82,  135,169,  198,140,  344,319
+    
+    classes=70
+    
+    ignore_thresh = .007
+    
     ...
     
     其他参数说明可参考: https://blog.csdn.net/weixin_42731241/article/details/81474920
