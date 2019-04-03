@@ -43,20 +43,27 @@
     训练过程也一直在调参数. 所以中断了几次.主要调节anchors 和 ignore_thresh
     
     A. iter_0-34900 
+    
           第一个 anchors=12,27,  15,34,  17,45,  23,61,  30,84,  198,140
+          
           第二个 anchors=10,14,  23,27,  37,58,  81,82,  135,169,  344,319
+          
           ignore_thresh=.8
           
     B. iter_34900-42700
+    
           两个 anchors=10,14,  23,27,  37,58,  81,82,  135,169,  344,319
           
     C. iter_42700-65000
+    
           ignore_thresh=.7
           
     D. iter_65000-74700
+    
           ignore_thresh=0.05
           
     E. iter_74700-
+    
           ignore_thresh=0.7
           
          
