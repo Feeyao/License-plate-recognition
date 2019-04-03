@@ -25,16 +25,8 @@
     darknet.exe detector train data/voc.data cfg/yolov3-tiny.cfg
    
 6. 训练过程(以其中一次过程为例)
-    
-    配置文件:
-    
-    ![yolov3-tiny.cfg](https://github.com/Feeyao/License-plate-recognition/blob/master/image/20190402165417.jpg)
-   
-    因为忘了改ignore_thresh,中断了两次. 在iter-34900调整anchors回默认值, 在42700调整ignore_thresh=.6
-  
-    ![iter_34900](https://github.com/Feeyao/License-plate-recognition/blob/master/image/chart-iter_34900.png)
-    ![iter_42700](https://github.com/Feeyao/License-plate-recognition/blob/master/image/chart-iter_42700.png)
-    
+ 
+
 **[总结]**
 1. 此方法对输入图片存在一定要求, 车牌区域在图片上较小时, 字符可能检测不出或漏检. 提升方法是将车牌区域检测和字符检测分开两个模型.
 
