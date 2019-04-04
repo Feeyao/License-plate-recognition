@@ -80,11 +80,18 @@ int main(int argc, char* argv[])
 	std::vector <std::string> files;
 	std::vector <std::string> filenames;
 	std::string imagetype = argv[4];
-	if (imagetype.find(".jpg") != std::string::npos || imagetype.find(".bmp") != std::string::npos || imagetype.find(".jpeg") != std::string::npos || imagetype.find(".png") != std::string::npos)
+	if (imagetype.find(".jpg") != std::string::npos || 
+	    imagetype.find(".bmp") != std::string::npos || 
+	    imagetype.find(".jpeg") != std::string::npos || 
+	    imagetype.find(".png") != std::string::npos){
 		files.push_back(argv[4]);
-	else
+	}else
 		GetFiles(argv[4], files, filenames);
-
+	
+	//记录总时间, 识别文件数, 匹配数的变量
+	std::chrono::duration<double> spenttimeAll;
+	int imagefilesize = 0, matchnum = 0;
+	
 	for (size_t index = 0; index < files.size(); index++) {
 		cv::Mat image = cv::imread(files[index]);
 		if (image.empty()) continue;
@@ -93,7 +100,7 @@ int main(int argc, char* argv[])
 		//计时
 		auto start = std::chrono::steady_clock::now();
 
-		std::vector<bbox_t> box = detect->detect(image, 0.6f);
+		std::vector<bbox_t> box = detect->detect(image, 0.7f);
 
 		std::map<int, std::string, greation> mapPlate;
 		bbox_t plateBox;
@@ -137,15 +144,25 @@ int main(int argc, char* argv[])
 
 		auto end = std::chrono::steady_clock::now();
 		spenttime = end - start;
+		spenttimeAll += spenttime;
+		if (plate == filenames[index].substr(0, filenames[index].find('.')))
+			matchnum++;
+		std::cout << filenames[index] << std::endl;
 		std::cout << "license plate: " << plate << std::endl;
 		std::cout << "detect time: " << spenttime.count() * 1000 << " ms" << std::endl;
-
+		std::cout << "-----------------------------" << std::endl;
+		imagefilesize++;
 		if (isShow) {
 			cv::imshow("show", image);
 			cv::waitKey();
 		}
 	}
-
+	std::cout << "识别文件数: " << imagefilesize << std::endl;
+	std::cout << "车牌匹配数: " << matchnum << std::endl;
+	std::cout << "识别率: " << matchnum * 1.f / imagefilesize * 100 << "%" << std::endl;
+	std::cout << "总耗时: " << spenttimeAll.count() * 1000 << " ms" << std::endl;
+	std::cout << "平均耗时: " << spenttimeAll.count() * 1000 / imagefilesize << " ms" << std::endl;
+	
 	delete detect;
   	return 0;
 }
