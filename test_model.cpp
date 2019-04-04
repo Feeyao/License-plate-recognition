@@ -147,7 +147,10 @@ int main(int argc, char* argv[])
 		spenttimeAll += spenttime;
 		if (plate == filenames[index].substr(0, filenames[index].find('.')))
 			matchnum++;
-		std::cout << filenames[index] << std::endl;
+		if (filenames.size() > 0)
+			std::cout << filenames[index] << std::endl;
+		else
+			std::cout << files[index] << std::endl;
 		std::cout << "license plate: " << plate << std::endl;
 		std::cout << "detect time: " << spenttime.count() * 1000 << " ms" << std::endl;
 		std::cout << "-----------------------------" << std::endl;
@@ -157,12 +160,13 @@ int main(int argc, char* argv[])
 			cv::waitKey();
 		}
 	}
-	std::cout << "识别文件数: " << imagefilesize << std::endl;
-	std::cout << "车牌匹配数: " << matchnum << std::endl;
-	std::cout << "识别率: " << matchnum * 1.f / imagefilesize * 100 << "%" << std::endl;
-	std::cout << "总耗时: " << spenttimeAll.count() * 1000 << " ms" << std::endl;
-	std::cout << "平均耗时: " << spenttimeAll.count() * 1000 / imagefilesize << " ms" << std::endl;
-	
+	if (filenames.size() > 0) {
+		std::cout << "识别文件数: " << imagefilesize << std::endl;
+		std::cout << "车牌匹配数: " << matchnum << std::endl;
+		std::cout << "识别率: " << matchnum * 1.f / imagefilesize * 100 << "%" << std::endl;
+		std::cout << "总耗时: " << spenttimeAll.count() * 1000 << " ms" << std::endl;
+		std::cout << "平均耗时: " << spenttimeAll.count() * 1000 / imagefilesize << " ms" << std::endl;
+	}
 	delete detect;
   	return 0;
 }
