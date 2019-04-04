@@ -2,8 +2,11 @@
 使用 "Darknet yolov3-tiny" 训练检测模型
 
 *1*. 下载[data.zip](https://pan.baidu.com/s/1_Wgy_3mBgNREXXn7HRfAHw),提取码: j7c2.
+
 *2*. 将data.zip解压到darknet.exe所在目录下.
+
 *3*. 进入data/voc目录下运行voc_label.bat重新生成2019_train.txt, 2019_val.txt.
+
 *4*. 修改cfg/yolov3-tiny.cfg
 
     [net]
