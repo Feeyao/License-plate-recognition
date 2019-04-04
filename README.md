@@ -71,7 +71,7 @@
           
     F. 最终因为loss趋于平缓, 选择了结束训练. 当然还可以再降低learning_rate继续训练, 我这里没继续了.
     
-    ![loss](https://github.com/Feeyao/License-plate-recognition/blob/master/image/chart-iter_34900_42700_65000_74700_149000.png)
+ ![loss](https://github.com/Feeyao/License-plate-recognition/blob/master/image/chart-iter_34900_42700_65000_74700_149000.png)
     
 *7*. 测试了Test目录下的73张图片, 最终识别对了70张, 识别率约95.89%.
 
