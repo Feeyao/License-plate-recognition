@@ -78,10 +78,8 @@
 ![test](https://github.com/Feeyao/License-plate-recognition/blob/master/image/20190404092136.jpg)
 
 **[总结]**
-1. 此方法对输入图片存在一定要求, 车牌区域在图片上较小时, 字符可能检测不出或漏检. 所以训练输入为416, 测试时为608是为了提升字符检出率. 
+1. 此方法对输入图片存在一定要求, 车牌区域在图片上较小时, 字符可能检测不出或漏检. 所以测试时为输入改为608是提升字符检出率,不过识别时间约增加一倍. *更好的解决方法是不改变输入尺寸, 将车牌区域检测和字符检测分开两个模型, 先检测车牌区域, 将车牌区域(范围可稍微扩张一些)再进行字符检测*.
    
-   更好的解决方法是将车牌区域检测和字符检测分开两个模型.
-   
-2. 训练数据里面倾斜样本少了一些, 对角度大的车牌效果不太好.
-
+2. 训练数据里面倾斜样本和模糊样本少了一些, 对角度大且车牌区域小的图片字符检测效果不太好.
+![image1](https://github.com/Feeyao/License-plate-recognition/blob/master/image/20190404083445.jpg)![image2](https://github.com/Feeyao/License-plate-recognition/blob/master/image/20190404083520.jpg)![image3](https://github.com/Feeyao/License-plate-recognition/blob/master/image/20190404083550.jpg)
 3. 想起来再写.
