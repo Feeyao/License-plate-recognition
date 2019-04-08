@@ -34,9 +34,7 @@
     ignore_thresh = .7
     
     ...
-    
-    其他参数说明可参考: 
-   [https://blog.csdn.net/weixin_42731241/article/details/81474920](https://blog.csdn.net/weixin_42731241/article/details/81474920)
+   其他参数说明可参考: [https://blog.csdn.net/weixin_42731241/article/details/81474920](https://blog.csdn.net/weixin_42731241/article/details/81474920)
     
 *5*. 执行 
 
