@@ -145,12 +145,15 @@ int main(int argc, char* argv[])
 		auto end = std::chrono::steady_clock::now();
 		spenttime = end - start;
 		spenttimeAll += spenttime;
-		if (plate == filenames[index].substr(0, filenames[index].find('.')))
-			matchnum++;
-		if (filenames.size() > 0)
+
+		if (filenames.size() > 0){
 			std::cout << filenames[index] << std::endl;
+			if (plate == filenames[index].substr(0, filenames[index].find('.')))
+				matchnum++;
+		}
 		else
 			std::cout << files[index] << std::endl;
+		
 		std::cout << "license plate: " << plate << std::endl;
 		std::cout << "detect time: " << spenttime.count() * 1000 << " ms" << std::endl;
 		std::cout << "-----------------------------" << std::endl;
